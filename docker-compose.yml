@@ -91,6 +91,8 @@ services:
       # NOTE: Please UPDATE THIS PASSWORD!
       POSTGRES_PASSWORD: testpass
       POSTGRES_DB: hoppscotch
+    volumes:
+      - pgdata:/var/lib/postgresql/data
     healthcheck:
       test:
         [
@@ -148,3 +150,6 @@ services:
       - hoppscotch-old-backend
     ports:
       - "3100:8080"
+
+volumes:
+  pgdata:
